@@ -6,7 +6,7 @@
     
     cp .env.dusk.codeship .env
     
-    composer install --no-interaction
+    composer install --prefer-dist --no-interaction
     
     ./vendor/laravel/dusk/bin/chromedriver-linux &
     

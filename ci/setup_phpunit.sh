@@ -8,7 +8,7 @@
 
     cp .env.codeship .env
     
-    composer install --no-interaction -o --optimize-autoloader
+    composer install --prefer-dist --no-interaction -o --optimize-autoloader
         
     php artisan migrate --force
     php artisan db:seed
