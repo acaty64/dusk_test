@@ -6,12 +6,10 @@
 
     mysql -e 'create database ucss_tests;'
 
-    composer install --no-interaction -o --optimize-autoloader
-    
     cp .env.codeship .env
     
-    cp .env.dusk.codeship .env
-    
+    composer install --no-interaction -o --optimize-autoloader
+        
     php artisan migrate --force
     php artisan db:seed
 
