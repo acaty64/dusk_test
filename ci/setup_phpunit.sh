@@ -10,7 +10,7 @@
     
     composer install --prefer-dist --no-interaction -o --optimize-autoloader
         
-    php artisan migrate --force
-    php artisan db:seed
+ #   php artisan migrate --force
+ #   php artisan db:seed
 
     vendor/bin/phpunit
