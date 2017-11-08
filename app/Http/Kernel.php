@@ -2,6 +2,9 @@
 
 namespace App\Http;
 
+use App\Acceso;
+use Illuminate\Auth\Middleware\Auth;
+use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -37,6 +40,24 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
+        'responsable' => [
+            'web',
+            'auth',
+            'can:is_responsable,'.Acceso::class,
+        ],         
+
+        'consulta' => [
+            'web',
+            'auth',
+            'can:is_consulta,'.Acceso::class,
+        ],         
+
+        'admin' => [
+            'web',
+            'auth',
+            'can:is_admin,'.Acceso::class,
+        ],
+
         'api' => [
             'throttle:60,1',
             'bindings',
@@ -57,5 +78,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'Access' => Styde\Html\Facades\Access::class,
     ];
 }
