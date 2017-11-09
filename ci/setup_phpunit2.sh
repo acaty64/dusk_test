@@ -2,7 +2,7 @@
     
     set -e
 # Set PHP version
-phpenv local 7.0
+phpenv local 7.1
 
 # Remove XDebug
 rm -f /home/rof/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
