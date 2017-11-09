@@ -10,6 +10,8 @@ rm -f /home/rof/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
 # Increase memory
 sed -i'' 's/^memory_limit=.*/memory_limit = 512m/g' ${HOME}/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
+mysql -e 'create database ucss_tests;'
+
 cp .env.codeship .env
 
 # Install dependencies through Composer
