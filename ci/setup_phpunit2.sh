@@ -16,6 +16,7 @@ cp .env.codeship .env
 
 # Install dependencies through Composer
 composer install --prefer-source --no-interaction
+php artisan key:generate
 
 # Seed database
 php artisan migrate:refresh --seed
