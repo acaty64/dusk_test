@@ -29,7 +29,7 @@ class ASessionValuesTest extends TestCase
         $this->get('/login')
             ->assertStatus(200);
 
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($user, 'web')
             ->get('/home')
             ->assertStatus(200);
     }
