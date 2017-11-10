@@ -12,7 +12,8 @@
         
     php artisan migrate --force --env="ucss_tests"
     php artisan db:seed --env="ucss_tests"
-
+    php artisan key:generate
+    
     cp phpunit.xml.ci phpunit.xml
 
     vendor/bin/phpunit
