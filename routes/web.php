@@ -19,8 +19,44 @@ Route::get('/', function () {
     //return view('welcome');
 });
 
-Auth::routes();
+//Auth::routes();
+Route::get('/login', [
+	'as'	=> 'login',
+	'uses'	=> 'Auth\LoginController@showLoginForm'
+]);
 
+Route::post('/login', [
+	'as'	=> 'login',
+	'uses'	=> 'Auth\LoginController@login'
+]);
+
+Route::get('/logout', [
+	'as'	=> 'logout',
+	'uses'	=> 'Auth\LoginController@logout'
+]);
+
+Route::post('/password/email', [
+	'as'	=> 'password.email',
+	'uses'	=> 'Auth\ForgotPasswordController@sendResetLinkEmail'
+]);
+
+Route::get('/password/reset', [
+	'as'	=> 'password.request',
+	'uses'	=> 'Auth\ForgotPasswordController@showLinkRequestForm'
+]);
+
+Route::post('/password/reset', [
+	'as'	=> '',
+	'uses'	=> 'Auth\ResetPasswordController@reset'
+]);
+
+Route::get('/password/reset/{token}', [
+	'as'	=> 'password.reset',
+	'uses'	=> 'Auth\ResetPasswordController@showResetForm'
+]);
+
+
+/****************************************************/
 Route::get('/home', [
 	'as'	=> 'home',
 	'uses'	=> 'HomeController@index']);
@@ -30,10 +66,3 @@ Route::post('/home/acceso', [
 	'uses'	=> 'HomeController@acceso',	
 ]);
 
-Route::get('/prueba1',function(){
-	dd(Session::all());
-});
-
-Route::get('/prueba2',function(){
-	dd(Auth::user());
-});
