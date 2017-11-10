@@ -24,7 +24,6 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-dd('UserController@index');
         $facultad_id = Session::get('facultad_id');
         $sede_id = Session::get('sede_id');
         $acceso_auth = Acceso::acceso_auth();
