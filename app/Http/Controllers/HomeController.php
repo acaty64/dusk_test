@@ -30,16 +30,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-dd('controller HomeController@index');
-        $facultades = \App\facultad::all();
+        $facultades = \App\Facultad::all();
         foreach ($facultades as $facultad) {
             $opc_facu[$facultad->id] = $facultad->wfacultad;
         }
 
-        $sedes = \App\sede::all();
+        $sedes = \App\Sede::all();
         foreach ($sedes as $sede) {
             $opc_sede[$sede->id] = $sede->wsede;
         }
+
         return view('home')
             ->with('opc_facu',$opc_facu)
             ->with('opc_sede',$opc_sede);
