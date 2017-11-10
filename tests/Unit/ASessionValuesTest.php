@@ -3,8 +3,9 @@
 namespace Tests\Unit;
 
 use App\User;
-use Tests\TestCase;
+use Illuminate\Foundation\Testing\Concerns\actingAs;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\TestCase;
 
 class ASessionValuesTest extends TestCase
 {
@@ -28,7 +29,7 @@ class ASessionValuesTest extends TestCase
         $this->get('/login')
             ->assertStatus(200);
 
-        $this->actingAs($user)
+        $response = $this->actingAs($user)
             ->get('/home')
             ->assertStatus(200);
     }
