@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+/** @test */
 class AAExampleTest extends TestCase
 {
     /**

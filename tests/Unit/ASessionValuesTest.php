@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\Concerns\actingAs;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
+/** @test */
 class ASessionValuesTest extends TestCase
 {
     use DatabaseTransactions;

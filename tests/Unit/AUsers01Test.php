@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use Tests\TestCase;
 
+/** @test */
 class AUsers01Test extends TestCase
 {
    function test_list_the_users()
