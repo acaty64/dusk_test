@@ -30,6 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+dd('controller HomeController@index');
         $facultades = \App\facultad::all();
         foreach ($facultades as $facultad) {
             $opc_facu[$facultad->id] = $facultad->wfacultad;

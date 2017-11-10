@@ -57,15 +57,10 @@ Route::get('/password/reset/{token}', [
 
 
 /****************************************************/
-Route::get('/home', function()
-{
-	dd('route /home');
-});
-	/*
-	[
+Route::get('/home', [
 	'as'	=> 'home',
 	'uses'	=> 'HomeController@index']);
-*/
+
 Route::post('/home/acceso', [
 	'as'	=> 'home.acceso',
 	'uses'	=> 'HomeController@acceso',	
