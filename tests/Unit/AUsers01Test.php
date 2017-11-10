@@ -28,6 +28,7 @@ class AUsers01Test extends TestCase
       Session::put('ctype','Administrador');
 
       $response = $this->get('administrador/user/index');
+
       $response->assertStatus(200);
       /*$this->markTestIncomplete(
             'This test has not been implemented yet.'
