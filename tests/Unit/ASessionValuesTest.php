@@ -21,8 +21,7 @@ class ASessionValuesTest extends TestCase
         // Check database
         $this->assertDatabaseHas('users',[
             'name' => 'Jane Doe',
-            'email' => 'jdoe@gmail.com',
-            'password'  => bcrypt('secret')
+            'email' => 'jdoe@gmail.com'
         ]);
 
         // Acting
