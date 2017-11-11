@@ -21,11 +21,11 @@ class DatabaseSeeder extends Seeder
             SedeFacultadesTableSeeder::class,
             MenusTableSeeder::class,
             MenuTypeTableSeeder::class,
-            FranjasTableSeeder::class,
+            //FranjasTableSeeder::class,
             //DHorasTableSeeder::class,
-            CursosTableSeeder::class,
-            GruposTableSeeder::class,
-            CursoGrupoTableSeeder::class
+            //CursosTableSeeder::class,
+            //GruposTableSeeder::class,
+            //CursoGrupoTableSeeder::class
         ]);
     }
 }

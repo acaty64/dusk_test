@@ -6,6 +6,8 @@
     
     cp .env.dusk.codeship .env
     
+    mysql -e 'create database dusk_tests;'
+    
     composer install --prefer-dist --no-interaction
     php artisan key:generate
     
