@@ -31,7 +31,7 @@ class A02Accesos01Test extends DuskTestCase
                     ->visit('/administrador/user/index')
                     ->assertPathIs('/administrador/user/index')
                     ->visit("/administrador/acceso/edit/{$user_mody->id}")
-                    //->pause(10000)
+                    ->pause(60000)
                     ->waitForText('Modificar Accesos de Usuario')
                     ->select('type_id',2)
                     ->press('Grabar modificaciones')
